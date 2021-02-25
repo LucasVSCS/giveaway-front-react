@@ -4,9 +4,8 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
-import HeaderTitle from '../../components/atoms/Login/HeaderTitle'
 
-import HeaderForm from '../../components/molecules/Form/HeaderForm'
+import LoginForm from '../../components/molecules/Form/LoginForm'
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -28,11 +27,7 @@ export default function LoginPage () {
     <Container component='main' maxWidth='xs'>
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <HeaderTitle />
-        <HeaderForm />
+        <LoginForm />
       </div>
     </Container>
   )
