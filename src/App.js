@@ -1,7 +1,9 @@
-import LoginPage from './pages/Login/Login'
+import LoginPage from './pages/Login'
+import Dashboard from './pages/Dashboard'
+import DashboardGiveaway from './pages/DashboardGiveaway'
 
 function App () {
-  return <LoginPage />
+  return <Dashboard />
 }
 
 export default App

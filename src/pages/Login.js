@@ -1,7 +1,7 @@
 import React from 'react'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Container from '@material-ui/core/Container'
-import LoginBox from '../../components/organisms/LoginBox/LoginBox'
+import LoginBox from '../components/organisms/LoginBox'
 
 export default function LoginPage () {
   return (

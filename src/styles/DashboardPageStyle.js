@@ -76,8 +76,39 @@ const DashboardPageStyle = makeStyles(theme => ({
     overflow: 'auto',
     flexDirection: 'column'
   },
+  giveawayPaper: {
+    padding: theme.spacing(2),
+    display: 'flex',
+    overflow: 'auto'
+  },
+  giveawayPaperImage: {
+    width: '550px',
+    height: '400px',
+    padding: theme.spacing(2),
+    display: 'flex',
+    overflow: 'auto'
+  },
   fixedHeight: {
-    height: 240
+    height: 'auto'
+  },
+  actionButtonsGroup: {
+    marginTop: '15px'
+  },
+  actionButtons: {
+    minHeight: 'calc( 120px / 2)'
+  },
+  customHeightPaper: {
+    minHeight: '250px',
+    flexDirection: 'row'
+  },
+  giveawayImage: {
+    width: '100%'
+  },
+  giveawayButtons: {
+    paddingTop: '30px'
+  },
+  inputGiveaway: {
+    paddingBottom: '20px'
   }
 }))
 
