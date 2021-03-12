@@ -27,30 +27,9 @@ const rows = [
     remove: 'Teste'
   },
   {
-    id: 1,
+    id: 2,
     name: 'Snow',
     endUsePeriod: '9-10-2019',
-    giveawayPermission: 'Sim',
-    remove: 'Teste'
-  },
-  {
-    id: 1,
-    name: 'Snow',
-    endUsePeriod: '10-10-2019',
-    giveawayPermission: 'Sim',
-    remove: 'Teste'
-  },
-  {
-    id: 1,
-    name: 'Snow',
-    endUsePeriod: '10-10-2019',
-    giveawayPermission: 'Sim',
-    remove: 'Teste'
-  },
-  {
-    id: 1,
-    name: 'Snow',
-    endUsePeriod: '10-10-2019',
     giveawayPermission: 'Sim',
     remove: 'Teste'
   }

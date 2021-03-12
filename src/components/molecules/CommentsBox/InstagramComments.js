@@ -70,7 +70,6 @@ const CommentList = Comments.map(comment => {
   )
 })
 
-console.log(CommentList)
 
 export default function InstagramComments () {
   return (
