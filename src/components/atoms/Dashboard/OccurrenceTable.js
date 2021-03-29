@@ -2,36 +2,27 @@ import * as React from 'react'
 import { DataGrid } from '@material-ui/data-grid'
 
 const columns = [
-  { field: 'id', headerName: 'ID', width: 150 },
-  { field: 'name', headerName: 'Nome', width: 150 },
+  { field: 'id', headerName: 'ID', width: 65 },
+  { field: 'description', headerName: 'Descrição', width: 500},
   {
-    field: 'endUsePeriod',
-    headerName: 'Fim periodo de uso',
+    field: 'occurrence_date',
+    headerName: 'Data ocorrência',
     type: 'date',
-    width: 150
+    width: 170
   },
   {
-    field: 'giveawayPermission',
-    headerName: 'Permissão de sorteio',
+    field: 'userOccurrence',
+    headerName: 'Usuário',
     width: 130
-  },
-  { field: 'remove', headerName: 'Excluir', width: 150 }
+  }
 ]
 
 const rows = [
   {
     id: 1,
     name: 'Snow',
-    endUsePeriod: '10-10-2019',
-    giveawayPermission: 'Sim',
-    remove: 'Teste'
-  },
-  {
-    id: 2,
-    name: 'Snow',
-    endUsePeriod: '9-10-2019',
-    giveawayPermission: 'Sim',
-    remove: 'Teste'
+    occurrence_date: '15/02/2021 15:20:10',
+    userOccurrence: 'Lucas Vinicius'
   }
 ]
 

@@ -10,7 +10,7 @@ export default function DashboardGiveaway () {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <DashboardMenu title='Novo sorteio' />
+      <DashboardMenu title='Gratidão Sorteador - Novo sorteio' />
       <DashboardGiveawayIndex />
     </div>
   )

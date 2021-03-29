@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { MenuItems } from '../atoms/Dashboard/MenuItems'
 import clsx from 'clsx'
 import Drawer from '@material-ui/core/Drawer'
@@ -10,10 +9,9 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import DashboardMenuTitle from '../atoms/Dashboard/DashboardMenuTitle'
-import Badge from '@material-ui/core/Badge'
 import MenuIcon from '@material-ui/icons/Menu'
-import PersonIcon from '@material-ui/icons/Person'
-
+import Box from '@material-ui/core/Box'
+import MyProfileButton from '../molecules/MyProfileButton/MyProfileButton'
 import DashboardPageStyle from '../../styles/DashboardPageStyle'
 
 export default function DashboardMenu (props) {
@@ -38,6 +36,9 @@ export default function DashboardMenu (props) {
         open={open}
       >
         <div className={classes.toolbarIcon}>
+          <img src={process.env.PUBLIC_URL + '/favicon.ico'} />
+          <Box fontWeight='fontWeightBold'>Gratidão Sorteador</Box>
+
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeftIcon />
           </IconButton>
@@ -66,11 +67,7 @@ export default function DashboardMenu (props) {
 
           <DashboardMenuTitle title={props.title} />
 
-          <IconButton color='inherit'>
-            <Badge badgeContent={4} color='secondary'>
-              <PersonIcon />
-            </Badge>
-          </IconButton>
+          <MyProfileButton />
         </Toolbar>
       </AppBar>
     </>

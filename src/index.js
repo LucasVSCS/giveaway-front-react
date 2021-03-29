@@ -6,6 +6,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import reportWebVitals from './reportWebVitals'
 import 'fontsource-roboto'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
+import DashboardGiveaway from './pages/DashboardGiveaway'
 
 const theme = createMuiTheme({
   palette: {
@@ -21,6 +22,11 @@ ReactDOM.render(
         <Switch>
           <Route path='/' exact={true} component={LoginPage} />
           <Route path='/dashboard' exact={true} component={DashboardPage} />
+          <Route
+            path='/newGiveaway'
+            exact={true}
+            component={DashboardGiveaway}
+          />
         </Switch>
       </BrowserRouter>
     </React.StrictMode>

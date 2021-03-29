@@ -10,7 +10,7 @@ export default function Dashboard () {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <DashboardMenu title='Dashboard' />
+      <DashboardMenu title='Gratidão Sorteador - Dashboard' />
       <DashboardIndex />
     </div>
   )

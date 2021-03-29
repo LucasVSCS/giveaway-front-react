@@ -13,6 +13,7 @@ import PersonAddIcon from '@material-ui/icons/PersonAdd'
 import AddToQueueIcon from '@material-ui/icons/AddToQueue'
 import UserTable from '../atoms/Dashboard/UserTable'
 import OccurenceTable from '../atoms/Dashboard/OccurrenceTable'
+import { Link } from 'react-router-dom'
 
 export default function DashboardIndex () {
   const classes = DashboardPageStyle()
@@ -53,6 +54,8 @@ export default function DashboardIndex () {
                   className={classes.actionButtons}
                   color='secondary'
                   startIcon={<AddToQueueIcon />}
+                  component={Link}
+                  to='/newGiveaway'
                 >
                   Gerar Sorteio
                 </Button>

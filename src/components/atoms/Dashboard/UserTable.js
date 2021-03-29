@@ -17,7 +17,7 @@ export default class UserTable extends Component {
 
   callApi () {
     axios
-      .get('http://127.0.0.1:9000/users/getUsers', {
+      .get(process.env.REACT_APP_API_URL + 'users/getUsers', {
         headers: {
           'Content-Type': 'application/json'
         },
