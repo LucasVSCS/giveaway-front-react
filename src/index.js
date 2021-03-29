@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-//import './index.css'
-import App from './App'
+import LoginPage from './pages/Login'
+import DashboardPage from './pages/Dashboard'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import reportWebVitals from './reportWebVitals'
 import 'fontsource-roboto'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
@@ -16,7 +17,12 @@ const theme = createMuiTheme({
 ReactDOM.render(
   <ThemeProvider theme={theme}>
     <React.StrictMode>
-      <App />
+      <BrowserRouter>
+        <Switch>
+          <Route path='/' exact={true} component={LoginPage} />
+          <Route path='/dashboard' exact={true} component={DashboardPage} />
+        </Switch>
+      </BrowserRouter>
     </React.StrictMode>
   </ThemeProvider>,
   document.getElementById('root')

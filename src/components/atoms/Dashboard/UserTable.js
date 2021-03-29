@@ -17,7 +17,13 @@ export default class UserTable extends Component {
 
   callApi () {
     axios
-      .get('http://localhost:9000/users/getUsers')
+      .get('http://127.0.0.1:9000/users/getUsers', {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        withCredentials: true,
+        credentials: 'include'
+      })
       .then(response => {
         this.setState({ apiResponse: response.data })
       })
