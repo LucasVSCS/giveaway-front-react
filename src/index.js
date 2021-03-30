@@ -17,19 +17,13 @@ const theme = createMuiTheme({
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <React.StrictMode>
-      <BrowserRouter>
-        <Switch>
-          <Route path='/' exact={true} component={LoginPage} />
-          <Route path='/dashboard' exact={true} component={DashboardPage} />
-          <Route
-            path='/newGiveaway'
-            exact={true}
-            component={DashboardGiveaway}
-          />
-        </Switch>
-      </BrowserRouter>
-    </React.StrictMode>
+    <BrowserRouter>
+      <Switch>
+        <Route path='/' exact={true} component={LoginPage} />
+        <Route path='/dashboard' exact={true} component={DashboardPage} />
+        <Route path='/newGiveaway' exact={true} component={DashboardGiveaway} />
+      </Switch>
+    </BrowserRouter>
   </ThemeProvider>,
   document.getElementById('root')
 )
