@@ -29,7 +29,10 @@ export default function MyProfileButton () {
 
   const handleLogin = () => {
     axios
-      .get(process.env.REACT_APP_API_URL + 'users/logout')
+      .get(process.env.REACT_APP_API_URL + 'users/logout', {
+        credentials: 'same-origin',
+        withCredentials: true
+      })
       .then(response => {
         window.location.href = 'http://127.0.0.1:3000/'
       })
