@@ -1,13 +1,11 @@
 import React from 'react'
 import CssBaseline from '@material-ui/core/CssBaseline'
-
 import DashboardMenu from '../components/organisms/DashboardMenu'
-import DashboardGiveawayIndex from '../components/organisms/DashboardGiveawayIndex'
+import DashboardNewUser from '../components/organisms/DashboardNewUser'
+import { useHistory } from 'react-router-dom'
 import DashboardPageStyle from '../styles/DashboardPageStyle'
 
-import { useHistory } from 'react-router-dom'
-
-export default function DashboardGiveaway () {
+export default function NewUser () {
   const classes = DashboardPageStyle()
   const history = useHistory()
 
@@ -18,8 +16,8 @@ export default function DashboardGiveaway () {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <DashboardMenu title='Gratidão Sorteador - Novo sorteio' />
-      <DashboardGiveawayIndex />
+      <DashboardMenu title='Gratidão Sorteador - Novo usuário' />
+      <DashboardNewUser />
     </div>
   )
 }

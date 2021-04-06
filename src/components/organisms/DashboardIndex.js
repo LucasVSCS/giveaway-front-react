@@ -47,6 +47,8 @@ export default function DashboardIndex () {
                 <Button
                   className={classes.actionButtons}
                   startIcon={<PersonAddIcon />}
+                  component={Link}
+                  to='/newUser'
                 >
                   Adicionar Usuário
                 </Button>

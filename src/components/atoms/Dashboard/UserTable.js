@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { DataGrid } from '@material-ui/data-grid'
-import axios from 'axios'
+import instance from '../../../apis/axios-default'
 import userColumns from './UserTableColumns'
 
 export default class UserTable extends Component {
@@ -16,18 +16,14 @@ export default class UserTable extends Component {
   }
 
   callApi () {
-    axios
-      .get(process.env.REACT_APP_API_URL + 'users/getUsers', {
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        withCredentials: true,
-        credentials: 'include'
-      })
+    instance
+      .get('users/getUsers')
       .then(response => {
         this.setState({ apiResponse: response.data })
       })
-      .catch(err => console.log(err))
+      .catch(error => {
+        console.log(error)
+      })
   }
 
   render () {

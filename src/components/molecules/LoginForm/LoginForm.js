@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import LoginButton from '../../atoms/Login/LoginButton'
 import TextField from '@material-ui/core/TextField'
 import LoginPageStyle from '../../../styles/LoginPageStyle'
 import { useHistory } from 'react-router-dom'
 import Typography from '@material-ui/core/Typography'
+import instance from '../../../apis/axios-default'
 import ForgetPasswordLink from '../../atoms/Login/ForgetPasswordLink'
 
 export default function HeaderForm () {
@@ -20,30 +20,27 @@ export default function HeaderForm () {
     setError(null)
     setLoading(true)
 
-    axios
-      .post(
-        process.env.REACT_APP_API_URL + 'users/verifyCredentials',
-        {
-          userEmail: userEmail,
-          userPassword: userPassword
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          withCredentials: true,
-          credentials: 'include'
-        }
-      )
+    instance
+      .post('users/verifyCredentials', {
+        userEmail: userEmail,
+        userPassword: userPassword
+      })
       .then(response => {
         setLoading(false)
-        history.push('/dashboard')
+
+        if (response.data['token']) {
+          localStorage.setItem('userCookie', response.data['token'])
+          history.push('/dashboard')
+        } else {
+          setError('Algo deu errado. Por favor, tente novamente!')
+        }
       })
       .catch(error => {
         setLoading(false)
         if (error === 401) {
           setError(error)
         } else {
+          console.log(error)
           setError('Algo deu errado. Por favor, tente novamente!')
         }
       })

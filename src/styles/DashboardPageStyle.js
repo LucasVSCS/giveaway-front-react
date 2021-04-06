@@ -109,6 +109,15 @@ const DashboardPageStyle = makeStyles(theme => ({
   },
   inputGiveaway: {
     paddingBottom: '20px'
+  },
+  newUserForm: {
+    width: '100%',
+    height: '500px'
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: '25ch'
   }
 }))
 

@@ -9,8 +9,8 @@ import MenuList from '@material-ui/core/MenuList'
 import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded'
 import Box from '@material-ui/core/Box'
 import { makeStyles } from '@material-ui/core/styles'
-import axios from 'axios'
-import { Redirect } from 'react-router-dom'
+import instance from '../../../apis/axios-default'
+import { useHistory } from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -22,18 +22,17 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export default function MyProfileButton () {
+  let history = useHistory()
   const classes = useStyles()
   const [open, setOpen] = React.useState(false)
   const anchorRef = React.useRef(null)
 
   const handleLogin = () => {
-    axios
-      .get(process.env.REACT_APP_API_URL + 'users/logout', {
-        credentials: 'same-origin',
-        withCredentials: true
-      })
+    instance
+      .get('users/logout')
       .then(response => {
-        window.location.href = 'http://127.0.0.1:3000/'
+        localStorage.removeItem('userCookie')
+        history.push('/')
       })
       .catch(error => {
         console.log(error)

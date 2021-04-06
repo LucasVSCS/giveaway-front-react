@@ -3,18 +3,15 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import DashboardMenu from '../components/organisms/DashboardMenu'
 import DashboardIndex from '../components/organisms/DashboardIndex'
 import { useHistory } from 'react-router-dom'
-import verifyUserSession from '../apis/handleLogin'
-
 import DashboardPageStyle from '../styles/DashboardPageStyle'
 
 export default function Dashboard () {
   const classes = DashboardPageStyle()
+  const history = useHistory()
 
-  const userData = verifyUserSession()
-
-  console.log(userData)
-
-
+  if (!localStorage.getItem('userCookie')) {
+    history.push('/')
+  }
 
   return (
     <div className={classes.root}>

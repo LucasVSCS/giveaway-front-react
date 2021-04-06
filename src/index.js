@@ -1,12 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import LoginPage from './pages/Login'
-import DashboardPage from './pages/Dashboard'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import reportWebVitals from './reportWebVitals'
 import 'fontsource-roboto'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
+// Default Pages
+import LoginPage from './pages/Login'
+import DashboardPage from './pages/Dashboard'
 import DashboardGiveaway from './pages/DashboardGiveaway'
+import NewUser from './pages/NewUser'
 
 const theme = createMuiTheme({
   palette: {
@@ -22,6 +25,7 @@ ReactDOM.render(
         <Route path='/' exact={true} component={LoginPage} />
         <Route path='/dashboard' exact={true} component={DashboardPage} />
         <Route path='/newGiveaway' exact={true} component={DashboardGiveaway} />
+        <Route path='/newUser' exact={true} component={NewUser} />
       </Switch>
     </BrowserRouter>
   </ThemeProvider>,
