@@ -10,6 +10,8 @@ import TextField from '@material-ui/core/TextField'
 import Divider from '@material-ui/core/Divider'
 import InstagramComments from '../molecules/CommentsBox/InstagramComments'
 
+import getPostComments from '../../apis/get-post-comments'
+
 export default function DashboardGiveawayIndex () {
   const classes = DashboardPageStyle()
 
@@ -36,9 +38,6 @@ export default function DashboardGiveawayIndex () {
     }
   }
 
-  const imageLink =
-    'https://instagram.fssa2-1.fna.fbcdn.net/v/t51.2885-15/e35/166628079_840332766559129_3335318644472053794_n.jpg?tp=1&_nc_ht=instagram.fssa2-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=t5U92hNVRKAAX_yIIIj&edm=AABBvjUAAAAA&ccb=7-4&oh=dd54c58cf317eaab03e0435d97521447&oe=60908C34&_nc_sid=83d603'
-
   return (
     <main className={classes.content}>
       <div className={classes.appBarSpacer} />
@@ -48,7 +47,10 @@ export default function DashboardGiveawayIndex () {
             <Paper className={classes.giveawayPaper}>
               <Grid item xs={6}>
                 <Paper className={classes.giveawayPaperImage}>
-                  <img className={classes.giveawayImage} src={imageLink} />
+                  <img
+                    className={classes.giveawayImage}
+                    src={process.env.PUBLIC_URL + 'thumb-placeholder.png'}
+                  />
                 </Paper>
                 <Grid item xs={12} className={classes.giveawayButtons}>
                   <TextField
