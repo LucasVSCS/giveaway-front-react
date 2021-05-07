@@ -2,7 +2,7 @@ import instance from './axios-default'
 const { IgApiClient } = require('instagram-private-api')
 const { MediaCommentsFeed } = require('instagram-private-api')
 
-let getPostComments = (async () => {
+let getPostComments = (async () => {/*
   const ig = new IgApiClient()
   ig.state.generateDevice('heciyej940')
   await ig.simulate.preLoginFlow()
@@ -20,7 +20,7 @@ let getPostComments = (async () => {
     .then(results => {
       console.log(results)
     })
-    .catch(error => console.log(error))
+    .catch(error => console.log(error))*/
 })()
 
 export default getPostComments
