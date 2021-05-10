@@ -20,10 +20,12 @@ import {
 import 'date-fns'
 import DateFnsUtils from '@date-io/date-fns'
 import instance from '../../apis/axios-default'
+import { useSnackbar } from 'notistack'
 
 export default function DashboardNewUser () {
   const classes = DashboardPageStyle()
   const history = useHistory()
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar()
 
   const [userData, setUserData] = useState({
     name: '',
@@ -36,13 +38,19 @@ export default function DashboardNewUser () {
 
   const submit = event => {
     event.preventDefault()
+
     instance
       .post(process.env.REACT_APP_API_URL + 'users/addUser', userData)
       .then(response => {
-        console.log(response)
+        enqueueSnackbar('Sucesso ao cadastrar o usuário', {
+          variant: 'success'
+        })
+        history.push('/dashboard')
       })
       .catch(error => {
-        console.log(error)
+        enqueueSnackbar('Erro ao cadastrar o usuário', {
+          variant: 'error'
+        })
       })
   }
 
@@ -74,6 +82,7 @@ export default function DashboardNewUser () {
                     <Grid item xs={12} sm={6}>
                       <TextField
                         required
+                        type='email'
                         name='email'
                         label='Email'
                         fullWidth
@@ -143,7 +152,7 @@ export default function DashboardNewUser () {
                           fullWidth
                           disableToolbar
                           variant='inline'
-                          format='dd/mm/yyyy'
+                          format='dd/MM/yyyy'
                           margin='normal'
                           label='Fim do período de permissão'
                           name='end_period'

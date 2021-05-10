@@ -39,6 +39,10 @@ export default function MyProfileButton () {
       })
   }
 
+  const handleChangePassword = () => {
+    history.push('changePassword')
+  }
+
   const handleToggle = () => {
     setOpen(prevOpen => !prevOpen)
   }
@@ -100,6 +104,9 @@ export default function MyProfileButton () {
                   id='menu-list-grow'
                   onKeyDown={handleListKeyDown}
                 >
+                  <MenuItem onClick={handleChangePassword}>
+                    Alterar senha
+                  </MenuItem>
                   <MenuItem onClick={handleLogin}>Fazer logout</MenuItem>
                 </MenuList>
               </ClickAwayListener>
