@@ -4,6 +4,7 @@ const { MediaCommentsFeed } = require('instagram-private-api')
 const shttps = require('socks-proxy-agent')
 
 let getPostComments = (async () => {
+  /*
   const ig = new IgApiClient()
   ig.state.generateDevice('heciyej940')
   ig.request.defaults.agentClass = shttps
@@ -27,6 +28,7 @@ let getPostComments = (async () => {
       console.log(results)
     })
     .catch(error => console.log(error))
+    */
 })()
 
 export default getPostComments
