@@ -42,27 +42,21 @@ export default function DashboardChangePassword () {
       })
       setError(true)
     } else {
-      enqueueSnackbar('Sucesso ao alterar a senha', {
-        variant: 'success'
-      })
-      setError(false)
-      console.log('Senhas iguais')
+      instance
+        .post(process.env.REACT_APP_API_URL + 'users/changePassword', userPassword)
+        .then(response => {
+          enqueueSnackbar('Sucesso ao alterar a senha', {
+            variant: 'success'
+          })
+          setError(false)
+          history.push('/dashboard')
+        })
+        .catch(error => {
+          enqueueSnackbar('Erro ao alterar a senha', {
+            variant: 'error'
+          })
+        })
     }
-    /*
-    instance
-      .patch(process.env.REACT_APP_API_URL + 'users/changePassword', userData)
-      .then(response => {
-        enqueueSnackbar('Sucesso ao cadastrar o usuário', {
-          variant: 'success'
-        })
-        history.push('/dashboard')
-      })
-      .catch(error => {
-        enqueueSnackbar('Erro ao cadastrar o usuário', {
-          variant: 'error'
-        })
-      })
-      */
   }
 
   return (
